@@ -11,6 +11,14 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
+from decouple import config
+from dotenv import load_dotenv
+
+# Access .env
+load_dotenv()
+secretKey = os.getenv('SECRET_KEY')
+debug = os.getenv('DEBUG')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +28,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-hk!)#0(lw7)*u8n9_9aqtnrf7)tx!kq5q+ljmlp6mj)o56+jf-'
+# SECRET_KEY = 'django-insecure-hk!)#0(lw7)*u8n9_9aqtnrf7)tx!kq5q+ljmlp6mj)o56+jf-'
+SECRET_KEY = secretKey
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = debug
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1']
 
