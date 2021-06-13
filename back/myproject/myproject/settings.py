@@ -46,7 +46,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pgdb'
+    'pgdb',
+    'django_seed',
+    'dbview',
+    'rest_framework',
+    # 'viewtable'
 ]
 
 MIDDLEWARE = [

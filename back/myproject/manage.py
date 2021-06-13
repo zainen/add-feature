@@ -2,6 +2,7 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
+from django.db import connection
 
 
 def main():
@@ -16,6 +17,12 @@ def main():
             "forget to activate a virtual environment?"
         ) from exc
     execute_from_command_line(sys.argv)
+    # CLEAR DATABASE
+    # with connection.cursor() as cursor:
+    #     cursor.execute("DROP SCHEMA public CASCADE;")
+    #     cursor.execute("CREATE SCHEMA public;")
+    #     cursor.execute("ALTER SCHEMA public OWNER TO feature")
+    #     cursor.execute("GRANT ALL PRIVILEGES ON DATABASE features TO feature;")
 
 
 if __name__ == '__main__':
